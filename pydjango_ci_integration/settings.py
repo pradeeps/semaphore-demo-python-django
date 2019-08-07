@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'pydjango_ci_integration.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
+# token 82bd7467b19871c6e385fd80ce0d7e679d5fba29
 DATABASES = {
     'default': {
         'ENGINE': os.getenv('DB_ENGINE', 'django.db.backends.mysql'),
@@ -92,7 +92,7 @@ DATABASES = {
         'PORT': os.getenv('DB_PORT', '3306')
     }
 }
-
+#QY6tkP7vsYYEb2g PYA mysql password
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

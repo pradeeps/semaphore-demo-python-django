@@ -16,5 +16,5 @@ class TaskListViewTest(TestCase):
     def test_chrome_site_homepage(self):
         browser = webdriver.Chrome()
         browser.get(SITE_URL)
-        self.assertIn('Semaphore', browser.title)
+        self.assertIn('Semaphore CI: Python / Django Example', browser.title)
         browser.close()
