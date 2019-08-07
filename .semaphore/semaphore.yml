@@ -24,7 +24,7 @@ blocks:
   - name: "Install Dependencies"
     task:
       # This block install the required Linux packages
-      # as well as the python dependencies.      
+      # as well as the python dependencies.
       # The prologue section is always executed before each job on
       # the block.
       # See https://docs.semaphoreci.com/article/50-pipeline-yaml#prologue
@@ -47,7 +47,7 @@ blocks:
             # to speed up the installation.
             # For more info on caching, see https://docs.semaphoreci.com/article/68-caching-dependencies
             - cache restore requirements-$SEMAPHORE_GIT_BRANCH-$(checksum requirements.txt),requirements-$SEMAPHORE_GIT_BRANCH-,requirements-master-
-            # Install python dependencies. If not found in the cache, 
+            # Install python dependencies. If not found in the cache,
             # pip will download the packages.
             - pip download --cache-dir .pip_cache -r requirements.txt
             # Store downloaded packages for future jobs.
@@ -127,7 +127,7 @@ blocks:
           - cache restore requirements-$SEMAPHORE_GIT_BRANCH-$(checksum requirements.txt)
           - pip install -r requirements.txt --cache-dir .pip_cache
           # Start application server.
-          - nohup python manage.py runserver &
+          - python manage.py runserver > /dev/null 2>&1 &
       jobs:
         - name: Browser Test
           commands:
